@@ -6,6 +6,8 @@
         xmlns:vm="clr-namespace:WpfMvvmApp.ViewModels"
         xmlns:conv="clr-namespace:WpfMvvmApp.Converters"
         mc:Ignorable="d"
+        Title="{Binding Title}" Height="900" Width="1200"
+        MinHeight="640" MinWidth="940">
         Title="{Binding Title}" Height="860" Width="1200"
         MinHeight="620" MinWidth="940">
     <Window.Resources>
@@ -33,11 +35,25 @@
 
     <Grid Margin="16">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="12" />
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
 
+        <DockPanel Grid.Row="0" LastChildFill="False">
+            <TextBlock Text="Document Type:" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0" />
+            <ComboBox Width="280"
+                      ItemsSource="{Binding DocumentTypes}"
+                      SelectedItem="{Binding SelectedDocumentType}"
+                      DisplayMemberPath="Name" />
+        </DockPanel>
+
+        <Border Grid.Row="2" BorderBrush="#FFCAD0DA" BorderThickness="1" CornerRadius="8" Background="#FFF7F9FC" Padding="10">
+            <Grid>
+                <Image Source="{Binding FormImageUri}" Stretch="Uniform" />
+                <TextBlock Text="Place source image in Data folder and set imagePath in selected DocDef JSON"
         <Border Grid.Row="0" BorderBrush="#FFCAD0DA" BorderThickness="1" CornerRadius="8" Background="#FFF7F9FC" Padding="10">
             <Grid>
                 <Image Source="{Binding FormImageUri}" Stretch="Uniform" />
@@ -50,6 +66,7 @@
             </Grid>
         </Border>
 
+        <Border Grid.Row="4" BorderBrush="#FFCAD0DA" BorderThickness="1" CornerRadius="8" Padding="12">
         <Border Grid.Row="2" BorderBrush="#FFCAD0DA" BorderThickness="1" CornerRadius="8" Padding="12">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel>

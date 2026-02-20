@@ -1,0 +1,47 @@
+{
+  "title": "Marriage Register OCR Verification",
+  "imagePath": "Data/sample-marriage-register.jpg",
+  "sections": [
+    {
+      "header": "Document Header",
+      "columns": 3,
+      "fields": [
+        { "key": "page", "label": "Page", "type": "text", "value": "Page 8", "confidence": 0.99 },
+        { "key": "church", "label": "Church", "type": "text", "value": "St George's Church", "confidence": 0.85 },
+        { "key": "parish", "label": "Parish", "type": "text", "value": "Doncaster", "confidence": 0.92 },
+        { "key": "county", "label": "County", "type": "text", "value": "York", "confidence": 0.95 },
+        { "key": "year", "label": "Year", "type": "text", "value": "1944", "confidence": 0.97 }
+      ]
+    }
+  ],
+  "tableSections": [
+    {
+      "header": "OCR Captured Marriage Entries",
+      "columns": [
+        { "key": "no", "label": "No.", "type": "text" },
+        { "key": "whenMarried", "label": "When Married", "type": "text" },
+        { "key": "name", "label": "Name and Surname", "type": "text" },
+        { "key": "age", "label": "Age", "type": "text" },
+        { "key": "condition", "label": "Condition", "type": "text" },
+        { "key": "profession", "label": "Rank or Profession", "type": "text" },
+        { "key": "residence", "label": "Residence", "type": "text" },
+        { "key": "father", "label": "Father's Name and Surname", "type": "text" }
+      ],
+      "rows": [
+        {
+          "entryNo": "15",
+          "cells": [
+            { "key": "no", "value": "15", "confidence": 1.0 },
+            { "key": "whenMarried", "value": "25 November 1944", "confidence": 0.93 },
+            { "key": "name", "value": "Alfred Barnes / Nellie Taylor", "confidence": 0.91 },
+            { "key": "age", "value": "31 / 24", "confidence": 0.88 },
+            { "key": "condition", "value": "Bachelor / Spinster", "confidence": 0.90 },
+            { "key": "profession", "value": "Furnace-man", "confidence": 0.79 },
+            { "key": "residence", "value": "Longfellow Crescent / Preston Avenue", "confidence": 0.76 },
+            { "key": "father", "value": "Charles Barnes / Henry Turner", "confidence": 0.82 }
+          ]
+        }
+      ]
+    }
+  ]
+}

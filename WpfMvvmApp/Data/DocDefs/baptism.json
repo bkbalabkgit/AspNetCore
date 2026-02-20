@@ -1,0 +1,44 @@
+{
+  "title": "Baptism Register OCR Verification",
+  "imagePath": "Data/sample-baptism-register.jpg",
+  "sections": [
+    {
+      "header": "Document Header",
+      "columns": 3,
+      "fields": [
+        { "key": "page", "label": "Page", "type": "text", "value": "Page 4", "confidence": 0.99 },
+        { "key": "parish", "label": "Parish", "type": "text", "value": "St Peter Church, Doncaster", "confidence": 0.86 },
+        { "key": "county", "label": "County", "type": "text", "value": "York", "confidence": 0.93 },
+        { "key": "year", "label": "Year", "type": "text", "value": "1847", "confidence": 0.90 }
+      ]
+    }
+  ],
+  "tableSections": [
+    {
+      "header": "OCR Captured Baptism Entries",
+      "columns": [
+        { "key": "whenBaptised", "label": "When Baptised", "type": "text" },
+        { "key": "childName", "label": "Child's Christian Name", "type": "text" },
+        { "key": "parentsChristian", "label": "Parent's Christian", "type": "text" },
+        { "key": "parentsSurname", "label": "Parent's Surname", "type": "text" },
+        { "key": "abode", "label": "Abode", "type": "text" },
+        { "key": "profession", "label": "Quality / Trade / Profession", "type": "text" },
+        { "key": "officiator", "label": "By whom ceremony was performed", "type": "text" }
+      ],
+      "rows": [
+        {
+          "entryNo": "25",
+          "cells": [
+            { "key": "whenBaptised", "value": "Jan 3", "confidence": 0.89 },
+            { "key": "childName", "value": "John Edward", "confidence": 0.94 },
+            { "key": "parentsChristian", "value": "Edward & Anne", "confidence": 0.90 },
+            { "key": "parentsSurname", "value": "Dunhill", "confidence": 0.95 },
+            { "key": "abode", "value": "East Laith Gate", "confidence": 0.83 },
+            { "key": "profession", "value": "Cornfactor", "confidence": 0.79 },
+            { "key": "officiator", "value": "W. Sanford Curate", "confidence": 0.84 }
+          ]
+        }
+      ]
+    }
+  ]
+}
