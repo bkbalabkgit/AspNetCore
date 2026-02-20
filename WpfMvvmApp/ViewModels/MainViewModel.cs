@@ -1,5 +1,7 @@
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using WpfMvvmApp.Models;
 
@@ -11,7 +13,7 @@ public class MainViewModel : ViewModelBase
 
     public Uri? FormImageUri { get; private set; }
 
-    public ObservableCollection<DocSectionViewModel> Sections { get; } = [];
+    public ObservableCollection<DocSectionViewModel> Sections { get; } = new ObservableCollection<DocSectionViewModel>();
 
     public MainViewModel()
     {
@@ -49,7 +51,7 @@ public class MainViewModel : ViewModelBase
             {
                 Header = section.Header,
                 Columns = section.Columns < 1 ? 1 : section.Columns,
-                Fields = [.. section.Fields.Select(MapField)]
+                Fields = new ObservableCollection<DocFieldViewModel>(section.Fields.Select(MapField))
             });
         }
     }
@@ -66,7 +68,7 @@ public class MainViewModel : ViewModelBase
             IsDate = type == "date",
             IsMultiline = type == "multiline",
             IsCheckbox = type == "checkbox",
-            IsText = type is "text" or "" || (type != "date" && type != "multiline" && type != "checkbox")
+            IsText = type == "text" || type == string.Empty || (type != "date" && type != "multiline" && type != "checkbox")
         };
     }
 }

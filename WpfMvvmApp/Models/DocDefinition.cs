@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace WpfMvvmApp.Models;
@@ -11,7 +12,7 @@ public class DocDefinition
     public string ImagePath { get; set; } = string.Empty;
 
     [JsonPropertyName("sections")]
-    public List<DocSectionDefinition> Sections { get; set; } = [];
+    public List<DocSectionDefinition> Sections { get; set; } = new List<DocSectionDefinition>();
 }
 
 public class DocSectionDefinition
@@ -23,7 +24,7 @@ public class DocSectionDefinition
     public int Columns { get; set; } = 2;
 
     [JsonPropertyName("fields")]
-    public List<DocFieldDefinition> Fields { get; set; } = [];
+    public List<DocFieldDefinition> Fields { get; set; } = new List<DocFieldDefinition>();
 }
 
 public class DocFieldDefinition
