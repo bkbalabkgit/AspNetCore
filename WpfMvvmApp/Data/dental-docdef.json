@@ -1,0 +1,38 @@
+{
+  "title": "Dental OCR Verification",
+  "imagePath": "Data/sample-dental-form.png",
+  "sections": [
+    {
+      "header": "Patient Information",
+      "columns": 2,
+      "fields": [
+        { "key": "patientName", "label": "Patient Name", "type": "text", "placeholder": "Full name" },
+        { "key": "dob", "label": "Date of Birth", "type": "date" },
+        { "key": "memberId", "label": "Member ID", "type": "text" },
+        { "key": "groupNumber", "label": "Group Number", "type": "text" },
+        { "key": "phone", "label": "Phone", "type": "text" },
+        { "key": "email", "label": "Email", "type": "text" }
+      ]
+    },
+    {
+      "header": "Provider & Claim",
+      "columns": 2,
+      "fields": [
+        { "key": "providerName", "label": "Provider Name", "type": "text" },
+        { "key": "npi", "label": "NPI", "type": "text" },
+        { "key": "serviceDate", "label": "Service Date", "type": "date" },
+        { "key": "diagnosis", "label": "Diagnosis", "type": "multiline", "placeholder": "Enter OCR-corrected diagnosis" }
+      ]
+    },
+    {
+      "header": "Treatment & Authorization",
+      "columns": 2,
+      "fields": [
+        { "key": "tooth", "label": "Tooth #", "type": "text" },
+        { "key": "surface", "label": "Surface", "type": "text" },
+        { "key": "approved", "label": "Approved", "type": "checkbox" },
+        { "key": "notes", "label": "Notes", "type": "multiline", "placeholder": "Corrections and reviewer notes" }
+      ]
+    }
+  ]
+}
