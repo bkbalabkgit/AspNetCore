@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
@@ -75,6 +76,12 @@ namespace WpfMvvmApp.ViewModels
         private void LoadDocDefinition(string fileName)
         {
             var jsonPath = Path.Combine(_docDefsDirectory, fileName);
+            LoadDocDefinition();
+        }
+
+        private void LoadDocDefinition()
+        {
+            var jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "dental-docdef.json");
             if (!File.Exists(jsonPath))
             {
                 return;
@@ -82,6 +89,7 @@ namespace WpfMvvmApp.ViewModels
 
             var docDef = JsonSerializer.Deserialize<DocDefinition>(File.ReadAllText(jsonPath));
             if (docDef == null)
+            if (docDef is null)
             {
                 return;
             }
@@ -96,6 +104,8 @@ namespace WpfMvvmApp.ViewModels
                 FormImageUri = new Uri(imagePath, UriKind.Absolute);
             }
             OnPropertyChanged(nameof(FormImageUri));
+                OnPropertyChanged(nameof(FormImageUri));
+            }
 
             Sections.Clear();
             foreach (var section in docDef.Sections)

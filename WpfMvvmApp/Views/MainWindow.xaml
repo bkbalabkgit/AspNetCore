@@ -8,6 +8,8 @@
         mc:Ignorable="d"
         Title="{Binding Title}" Height="900" Width="1200"
         MinHeight="640" MinWidth="940">
+        Title="{Binding Title}" Height="860" Width="1200"
+        MinHeight="620" MinWidth="940">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
         <conv:NullToVisibilityConverter x:Key="NullToVisibility" />
@@ -52,6 +54,10 @@
             <Grid>
                 <Image Source="{Binding FormImageUri}" Stretch="Uniform" />
                 <TextBlock Text="Place source image in Data folder and set imagePath in selected DocDef JSON"
+        <Border Grid.Row="0" BorderBrush="#FFCAD0DA" BorderThickness="1" CornerRadius="8" Background="#FFF7F9FC" Padding="10">
+            <Grid>
+                <Image Source="{Binding FormImageUri}" Stretch="Uniform" />
+                <TextBlock Text="Place source image at Data/sample-burial-register.jpg"
                            Foreground="#99000000"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
@@ -61,6 +67,7 @@
         </Border>
 
         <Border Grid.Row="4" BorderBrush="#FFCAD0DA" BorderThickness="1" CornerRadius="8" Padding="12">
+        <Border Grid.Row="2" BorderBrush="#FFCAD0DA" BorderThickness="1" CornerRadius="8" Padding="12">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                     <ItemsControl ItemsSource="{Binding Sections}">
