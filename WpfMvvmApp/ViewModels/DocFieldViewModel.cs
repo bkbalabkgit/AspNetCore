@@ -1,46 +1,49 @@
-namespace WpfMvvmApp.ViewModels;
+using System;
 
-public class DocFieldViewModel : ViewModelBase
+namespace WpfMvvmApp.ViewModels
 {
-    public string Key { get; init; } = string.Empty;
-    public string Label { get; init; } = string.Empty;
-    public string Placeholder { get; init; } = string.Empty;
-
-    public bool IsText { get; init; }
-    public bool IsDate { get; init; }
-    public bool IsMultiline { get; init; }
-    public bool IsCheckbox { get; init; }
-
-    private string? _textValue;
-    public string? TextValue
+    public class DocFieldViewModel : ViewModelBase
     {
-        get => _textValue;
-        set
+        public string Key { get; init; } = string.Empty;
+        public string Label { get; init; } = string.Empty;
+        public string Placeholder { get; init; } = string.Empty;
+
+        public bool IsText { get; init; }
+        public bool IsDate { get; init; }
+        public bool IsMultiline { get; init; }
+        public bool IsCheckbox { get; init; }
+
+        private string? _textValue;
+        public string? TextValue
         {
-            _textValue = value;
-            OnPropertyChanged();
+            get => _textValue;
+            set
+            {
+                _textValue = value;
+                OnPropertyChanged();
+            }
         }
-    }
 
-    private DateTime? _dateValue;
-    public DateTime? DateValue
-    {
-        get => _dateValue;
-        set
+        private DateTime? _dateValue;
+        public DateTime? DateValue
         {
-            _dateValue = value;
-            OnPropertyChanged();
+            get => _dateValue;
+            set
+            {
+                _dateValue = value;
+                OnPropertyChanged();
+            }
         }
-    }
 
-    private bool _boolValue;
-    public bool BoolValue
-    {
-        get => _boolValue;
-        set
+        private bool _boolValue;
+        public bool BoolValue
         {
-            _boolValue = value;
-            OnPropertyChanged();
+            get => _boolValue;
+            set
+            {
+                _boolValue = value;
+                OnPropertyChanged();
+            }
         }
     }
 }
